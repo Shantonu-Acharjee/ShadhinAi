@@ -1,0 +1,134 @@
+{% load static %}
+<section class="header"><!--header section start-->
+
+    <header>
+
+        <div class="logo">
+            <a href="{% url 'home' %}"><img src="{% static 'media/logo/logo.svg' %}" alt=""></a>
+        </div>
+
+        <div class="menu">
+
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="{% url 'blogs' %}">Blogs</a></li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+
+        <div class="search-bar">
+
+            <form action="{% url 'search_blogs' %}" method="GET">
+                <input name="q" type="search" placeholder="Search..." required>
+                <button type="submit"><i class="fas fa-search" id="search-btn"></i></button>
+            </form>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="taggle-menu"><!--taggle-menu start-->
+
+            <div class="user-profile"><!--user-profile start-->
+
+                <div class="profile-photo">
+
+                    {% if request.user.is_authenticated %}
+
+                        {% if user.get_profile_picture %}
+                        <a href="{% url 'profile' %}"><img src="{{user.get_profile_picture}}" alt="{{user.username}}"></a>
+
+                        {% else %}
+                        <a href="{% url 'profile' %}"><img src="{% static 'media/user/user1.png' %}" alt="{{user.username}}"></a>
+                        {% endif %}
+                    
+
+                    {% else %}
+                    <a href="{% url 'login' %}"><img src="{% static 'media/user/user.png' %}" alt=""></a>
+                    {% endif %}
+
+                </div>
+
+            </div><!--user-profile end-->
+
+
+
+            <div class="taggle-menu-bar">
+                <i id="taggle-bar" class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="taggle-menu-items display-none">
+
+                <ul>
+
+
+                    <li><a href="#"><span id="dripdown1icon"><i class="fa-solid fa-caret-down"></i></span>
+                            Top Projects</a>
+
+                        <ul class="dripdown1 display-none">
+                            <li><a href="#">Arduino Projects</a></li>
+                            <li><a href="#">Node MCU Projects</a></li>
+                            <li><a href="#">Python Projects</a></li>
+                        </ul>
+
+                    </li>
+
+
+                    
+                    <li><a href="">SiteMap</a></li>
+                    <li><a href="">PageNotFound</a></li>
+
+                    {% for category in categories %}
+                    <li><a href="{% url 'category_blogs' category.slug  %}">{{category.title}}</a></li>
+                    {% endfor %}
+
+
+
+                    {% if request.user.is_authenticated %}
+                    <li><span id="dripdown2icon"><i class="fa-solid fa-caret-down"></i></span><a href="{% url 'profile' %}">
+                        Profile</a>
+
+                        <ul class="dripdown2 display-none">
+                            <li><a href="{% url 'profile' %}">My Profile</a></li>
+                            <li><a href="{% url 'user_notifications' %}">
+                                {% if unseen > 0 %}
+                                    {{unseen}}
+                                {% endif %}
+                                Notification</a></li>
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        </ul>
+
+                    </li>
+
+                    {% else %}
+
+                    <li><a href="{% url 'login' %}">Login</a></li>
+
+                    {% endif %}
+
+                    
+
+                </ul>
+
+
+            </div>
+
+        </div><!--taggle-menu end-->
+
+    </header>
+
+
+
+
+</section><!--header section end-->

@@ -1,0 +1,48 @@
+{% extends '../base/base.html' %}
+{% load static %}
+{% block title %}{{blog.title}}{% endblock title %}<!--title-->
+
+
+
+
+{% block custom_css %}<!--custom_css start-->
+<style>
+    
+</style>
+{% endblock custom_css %}<!--custom_css end-->
+
+
+
+
+{% block main_content %}<!--main_content start-->
+
+<form action="{% url 'edit_profile' %}" method="POST">
+    {% csrf_token %}
+    <input value="{{account.first_name}}" type="text" placeholder="Firstname" name="first_name"> <br>
+    <input value="{{account.last_name}}" type="text" placeholder="Lastname" name="last_name"> <br>
+    <input value="{{account.username}}" type="text" placeholder="Username" name="username"> <br>
+    <input value="{{account.email}}" type="text" placeholder="Email" name="email"> <br>
+    <input type="text" placeholder="Enter new password" name="new_password"> <br>
+    <input type="text" placeholder="Enter new password" name="confirm_password"> <br>
+    <button type="submit">Update</button>
+</form>
+
+<br>
+<br>
+<br>
+
+
+
+
+<form action="{% url 'change_profile_picture' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input required name="profile_image" type="file" name="profile_images" accept="image/*"> <br>
+    <button type="submit">Update Profile</button>
+
+</form>
+
+{% endblock main_content %}<!--main_content end-->
+
+
+
+

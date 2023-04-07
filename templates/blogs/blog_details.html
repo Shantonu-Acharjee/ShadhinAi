@@ -1,0 +1,233 @@
+{% extends '../base/base.html' %}
+{% load static %}
+{% block title %}{{blog.title}}{% endblock title %}<!--title-->
+
+
+
+{% block custom_css %}<!--custom_css start-->
+
+<style>
+    /*-------------------------------------------
+        blog-post start
+        --------------------------------------------*/
+
+
+        
+
+        .blog-post h2 {
+            color: var(--white);
+            padding: 10px 5px;
+            font-size: 20px;
+            background: var(--gray-light);
+        }
+
+        .blog-post p {
+            color: var(--white);
+            font-size: 16px;
+            text-align: justify;
+            padding: 10px 5px;
+        }
+
+        .blog-post ul {
+
+            list-style: disc;
+            margin-left: 30px;
+        }
+
+        .blog-post ul li {
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            padding: 5px 0;
+        }
+
+        .blog-post img {
+            margin: 5px 0;
+        }
+
+        /*-------------------------------------------
+        blog-post end
+        --------------------------------------------*/
+
+
+/*-------------------------------------------------
+comment start
+-------------------------------------------------*/
+
+.comment-section .comment-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--white);
+    padding: 10px 5px;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.comment-section .comment-header .user-name a{
+    color: var(--green);
+}
+
+.comment-section .comment-header .user-name a:hover{
+    text-decoration: underline;
+}
+
+
+
+.comment-section .write-your-comment{
+    padding: 10px 5px;
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-column-gap: 10px;
+    border-bottom: 1px solid var(--white);
+}
+
+
+
+.comment-section .user-profile{
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--green);
+}
+
+
+.comment-section .write-your-comment form{
+  
+    display: grid;
+    grid-template-columns: auto 60px;
+    grid-column-gap: 10px;
+}
+.comment-section .write-your-comment form input{
+    padding: 0 5px;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.comment-section .write-your-comment form button{
+    border-radius: 5px;
+    background: var(--green);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.comment-section .comment-list{
+    padding: 5px 0 10px 5px;
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-gap: 10px;
+    
+}
+
+
+.comment-section .reply-list{
+    padding: 5px 0 10px 5px;
+    display: grid;
+    grid-template-columns: auto 40px;
+}
+
+
+.comment-section .comment-list .coment,
+.comment-section .reply-list .reply{
+    background-color: var(--gray-light);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+
+.comment-section .comment-list .coment a,
+.comment-section .reply-list .reply a{
+    color: var(--green);
+    font-weight: bold;
+}
+
+.single-comment-section{
+    margin: 15px 0;
+}
+
+
+
+.comment-list-with-reply form{
+    position: relative;
+    margin-left: 55px;
+
+}
+
+.comment-section .reply-list .reply{
+    margin-right: 10px;
+}
+
+.comment-list-with-reply form input{
+    height: 30px;
+    width: 100%;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 65px;
+}
+
+
+.comment-list-with-reply form button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 10px;
+    background: var(--green);
+    border-radius: 0 5px 5px 0;
+    font-weight: bold;
+    
+}
+/*-------------------------------------------------
+comment end
+-------------------------------------------------*/
+
+    /*-------------------------------------------
+    page-number end
+    --------------------------------------------*/
+
+    pre code span{
+        color: var(--green);
+    }
+
+.blog-post{
+    color: var(--white);
+}
+
+</style>
+{% endblock custom_css %}<!--custom_css end-->
+
+
+
+
+{% block main_content %}<!--main_content start-->
+
+
+<div class="blog-post"><!--blog-post start-->
+
+    <h1 class="page-header">{{blog.title}}</h1>
+
+    <img src="{{blog.banner.url}}" alt="">
+
+    <p>{{blog.description|safe}}</p>
+
+
+</div><!--blog-post start-->
+
+
+{% include '../blogs/comments.html' %}
+
+
+{% endblock main_content %}<!--main_content end-->
+
+
+
+
+
+
+
+
+
+
+

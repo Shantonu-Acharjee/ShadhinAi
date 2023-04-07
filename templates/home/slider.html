@@ -1,0 +1,25 @@
+<div class="swiper mySwiper home-slider"><!--home-slider start-->
+
+    <div class="swiper-wrapper wrapper"> <!--wrapper start-->
+
+
+        
+        {% for slider in sliders %}
+        <div class="swiper-slide slide">
+
+            <div class="image">
+                <a href="{{slider.destination}}">
+                    <img src="{{slider.banner.url}}" alt="{{slider.title}}">
+                </a>
+            </div>
+
+        </div>
+        {% endfor %}
+        
+
+
+    </div><!--wrapper End-->
+
+    <div class="swiper-pagination"></div>
+
+</div><!--home-slider End-->
