@@ -50,12 +50,12 @@
                         <a href="{% url 'profile' %}"><img src="{{user.get_profile_picture}}" alt="{{user.username}}"></a>
 
                         {% else %}
-                        <a href="{% url 'profile' %}"><img src="{% static 'media/user/user1.png' %}" alt="{{user.username}}"></a>
+                        <a href="{% url 'profile' %}"><img src="https://raw.githubusercontent.com/Shantonu-Acharjee/ShadhinAi.com/Vershon-0.1/public/media/user/user.png" alt="{{user.username}}"></a>
                         {% endif %}
                     
 
                     {% else %}
-                    <a href="{% url 'login' %}"><img src="{% static 'media/user/user.png' %}" alt=""></a>
+                    <a href="{% url 'login' %}"><img src="https://raw.githubusercontent.com/Shantonu-Acharjee/ShadhinAi.com/Vershon-0.1/public/media/user/user.png" alt="Shadhin Ai"></a>
                     {% endif %}
 
                 </div>
