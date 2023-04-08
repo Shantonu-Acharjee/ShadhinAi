@@ -6,7 +6,17 @@
 
     <div class="main-post-cart">
 
+        {% if blog.low_regulation_banner_link %}
+        <a href="{% url 'blog_details' blog.slug %}"><div class="photo"><img src="{{blog.low_regulation_banner_link}}" alt="{{blog.title}}" loading="lazy"></div></a>
+        
+        {% elif blog.high_regulation_banner_link %}
+        <a href="{% url 'blog_details' blog.slug %}"><div class="photo"><img src="{{blog.high_regulation_banner_link}}" alt="{{blog.title}}" loading="lazy"></div></a>
+
+        
+        {% else %}
         <a href="{% url 'blog_details' blog.slug %}"><div class="photo"><img src="{{blog.banner.url}}" alt="{{blog.title}}" loading="lazy"></div></a>
+        {% endif %}
+        
 
 
         <div class="post-date-time">

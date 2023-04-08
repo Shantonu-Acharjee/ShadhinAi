@@ -55,6 +55,7 @@ pip freeze > requirements.txt
 - pip3.8 install --user pythonanywhere
 - git pull
 - rm -r folder name (to deleate a folder)
+- git pull --no-edit
 
 
 # Doc

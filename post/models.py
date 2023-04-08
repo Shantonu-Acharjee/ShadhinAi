@@ -45,7 +45,9 @@ class Blog(models.Model):
     likes = models.ManyToManyField(User, related_name='user_likes', blank= True)
     title = models.CharField(max_length= 250)
     slug = models.SlugField(null= True, blank= True)
-    banner = models.ImageField(upload_to= 'blog_banners')
+    banner = models.ImageField(upload_to= 'blog_banners', blank= True, null= True)
+    low_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
+    high_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
     description = RichTextField()
     created_date = models.DateField(auto_now_add= True)
 
