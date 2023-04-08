@@ -60,6 +60,7 @@ TEMPLATES = [
                 "post.context_processors.get_all_categories",
                 "post.context_processors.get_all_tags",
                 "user_profile.context_processors.user_notifications",
+                "base.context_processors.get_header_logo",
             ],
         },
     },

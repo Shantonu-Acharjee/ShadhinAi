@@ -30,6 +30,9 @@ def home(request):
     return render(request, 'home/home.html', context)
 
 
+
+
+
 def search_blogs(request):
 
     search_key = request.GET.get('q', None)

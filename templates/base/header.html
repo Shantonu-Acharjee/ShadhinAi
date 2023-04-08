@@ -4,7 +4,18 @@
     <header>
 
         <div class="logo">
-            <a href="{% url 'home' %}"><img src="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/logo/ShadhinAi.svg" alt="ShadhinAi"></a>
+            
+            {% if logo.image_link %}
+            <a href="{% url 'home' %}"><img src="{{logo.image_link}}" alt="{{logo.brand_name}}"></a>
+
+            {% elif logo.brang_logo %}
+            <a href="{% url 'home' %}"><img src="{{logo.brang_logo}}" alt="{{logo.brand_name}}"></a>
+
+            {% else %}
+            <a href="{% url 'home' %}"><h1>{{logo.brand_name}}</h1></a>
+            {% endif %}
+            
+            
         </div>
 
         <div class="menu">
