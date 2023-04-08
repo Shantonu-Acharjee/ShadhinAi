@@ -8,9 +8,16 @@
         <div class="swiper-slide slide">
 
             <div class="image">
+
                 <a href="{{slider.destination}}">
+                    {% if slider.image_link %}
+                        <img src="{{slider.image_link}}" alt="{{slider.title}}">
+
+                    {% else %}
                     <img src="{{slider.banner.url}}" alt="{{slider.title}}">
+                    {% endif %}
                 </a>
+
             </div>
 
         </div>

@@ -3,7 +3,8 @@ from django.utils.text import slugify
 
 class Slider(models.Model):
     title = models.CharField(max_length= 150)
-    banner = models.ImageField(upload_to = 'slider')
+    banner = models.ImageField(upload_to = 'slider', null= True, blank= True)
+    image_link = models.CharField(max_length= 300, null= True, blank= True)
     slug = models.SlugField(null= True, blank= True)
     destination = models.CharField(max_length= 250, default= '#')
     created_date = models.DateField(auto_now_add= True)
