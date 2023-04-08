@@ -36,6 +36,7 @@ pip freeze > requirements.txt
 - i have to use custom sitemap.xml
 - tag is not editable problem solve
 - forgot password
+- title on img tag
 
 
 

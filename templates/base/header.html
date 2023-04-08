@@ -4,7 +4,7 @@
     <header>
 
         <div class="logo">
-            <a href="{% url 'home' %}"><img src="https://raw.githubusercontent.com/Shantonu-Acharjee/ShadhinAi.com/main/photo/logo.svg" alt="ShadhinAi"></a>
+            <a href="{% url 'home' %}"><img src="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/logo/ShadhinAi.svg" alt="ShadhinAi"></a>
         </div>
 
         <div class="menu">
@@ -50,12 +50,12 @@
                         <a href="{% url 'profile' %}"><img src="{{user.get_profile_picture}}" alt="{{user.username}}"></a>
 
                         {% else %}
-                        <a href="{% url 'profile' %}"><img src="https://raw.githubusercontent.com/Shantonu-Acharjee/ShadhinAi.com/Vershon-0.1/public/media/user/user.png" alt="{{user.username}}"></a>
+                        <a href="{% url 'profile' %}"><img src="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/user/user.png" alt="{{user.username}}"></a>
                         {% endif %}
                     
 
                     {% else %}
-                    <a href="{% url 'login' %}"><img src="https://raw.githubusercontent.com/Shantonu-Acharjee/ShadhinAi.com/Vershon-0.1/public/media/user/user.png" alt="Shadhin Ai"></a>
+                    <a href="{% url 'login' %}"><img src="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/user/user.png" alt="Shadhin Ai user profile photo"></a>
                     {% endif %}
 
                 </div>
