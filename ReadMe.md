@@ -52,6 +52,7 @@ pip freeze > requirements.txt
 - pip install django-ckeditor
 - pip freeze > requirements.txt
 - pip3.8 install --user pythonanywhere
+- git pull
 
 
 # Doc
