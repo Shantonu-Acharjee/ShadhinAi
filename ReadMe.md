@@ -4,17 +4,6 @@ http://127.0.0.1:8000/static/1.webp
 {% for blog in blogs|slice:"6" %}
 10.0.0.174:5500
 
-<!--
-        blog.category
-        blog.title
-        blog.user.username
-        blog.created_date
-        blog.blog_comments.all.count
-        blog.description|truncatewords:30
-        /media/blog_banners/4.webp
-        blog_banners/4.webp
-        -->
-
 slider - 6
 home page - 12
 bloge page - 18
