@@ -59,3 +59,6 @@ pip freeze > requirements.txt
 # Doc
 - Shantonu560634
 - https://www.pythonanywhere.com/user/ShantonuAcharjee/consoles/28165668/
+- https://cdn.jsdelivr.net/gh/user/repo@version/file
+- https://cdn.jsdelivr.net/gh/Shantonu-Acharjee/ShadhinAi.com@main/style.css
+- https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/css/style.css
