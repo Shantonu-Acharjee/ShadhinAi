@@ -3,11 +3,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
-from post.sitemap import BlogSitemap
+from post.sitemap import BlogSitemap, CategorySitemap, TagSitemap
 
 
 sitemaps = {
     'blog' : BlogSitemap, 
+    'category' : CategorySitemap,
+    'tag' : TagSitemap,
 }
 
 
