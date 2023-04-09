@@ -1,6 +1,7 @@
 {% extends '../base/base.html' %}
 {% block title %}ShadhinAi | Bangladeshi AI service provider{% endblock title %}<!--title-->
-{% block meta_description %}Shadhin Ai is Bangladeshi AI and ML service provider. ShadhinAi ensures freedom of technology.{% endblock meta_description %}
+{% block meta_description %}Shadhin Ai is Bangladeshi AI and ML service provider. ShadhinAi ensures freedom of
+technology.{% endblock meta_description %}
 
 
 {% block custom_css %}<!--custom_css start-->
@@ -14,7 +15,7 @@
     main-post start
     --------------------------------------------*/
 
-    .main-post h1{
+    .main-post h1 {
 
         padding: 10px 0;
         font-size: 25px;
@@ -105,7 +106,7 @@
 
     }
 
-    .page-number ul li a.active{
+    .page-number ul li a.active {
         background: var(--green);
     }
 
@@ -118,31 +119,32 @@
 scrolling-text start
 --------------------------------------------*/
 
-.scrolling-text p marquee {
-    background: var(--header-color);
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    color: var(--white);
-    padding: 5px 0;
-}
+    .scrolling-text p marquee {
+        background: var(--header-color);
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+        color: var(--white);
+        padding: 5px 0;
+    }
 
-/*-------------------------------------------
+    /*-------------------------------------------
 scrolling-text end
 --------------------------------------------*/
-
 </style>
 {% endblock custom_css %}<!--custom_css end-->
 
 
 
 
-    
+
 <!--scrolling_text Start-->
 {% block scrolling_text %}
 <div class="header-padding scrolling-text">
 
     {% if scrolling_text.text %}
-    <p><marquee>{{scrolling_text.text}}</marquee></p>
+    <p>
+        <marquee>{{scrolling_text.text}}</marquee>
+    </p>
     {% endif %}
 
 </div>
@@ -223,6 +225,7 @@ scrolling-text end
 
 <!--Schema Start -->
 {% block schema %}
+<script type="application/ld+json">
 {
     "@context": "https://schema.org/",
     "@type": "WebSite",
@@ -233,6 +236,7 @@ scrolling-text end
       "target": "https://{{site_domain}}/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
-  }
+}
+</script>
 {% endblock schema %}
 <!--Schema End -->
