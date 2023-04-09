@@ -10,7 +10,7 @@ class Category(models.Model):
     slug = models.SlugField(null= True, blank= True)
     created_date = models.DateField(auto_now_add= True)
     updated = models.DateTimeField(auto_now= True)
-
+    meta_description = models.CharField(max_length= 300, null= True, blank= True)
 
     def __str__(self):
         return self.title
@@ -28,6 +28,7 @@ class Tag(models.Model):
     slug = models.SlugField(null= True, blank= True)
     created_date = models.DateField(auto_now_add= True)
     updated = models.DateTimeField(auto_now= True)
+    meta_description = models.CharField(max_length= 300, null= True, blank= True)
     
 
     def __str__(self):
