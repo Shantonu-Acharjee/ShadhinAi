@@ -4,6 +4,7 @@ from post.views import blogs, category_blogs, tag_blogs, blog_details, add_reply
 
 
 urlpatterns = [
+    
     path('blogs/', blogs, name='blogs'),
     path('category/<str:slug>/', category_blogs, name='category_blogs'),
     path('tag/<str:slug>/', tag_blogs, name='tag_blogs'),

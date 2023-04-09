@@ -11,6 +11,10 @@ from post.forms import AddBlogForm
 from django.utils.text import slugify
 from notification.models import Notification
 
+
+
+
+
 @not_logged_in_required
 def login_user(request):
     form = LoginForm()

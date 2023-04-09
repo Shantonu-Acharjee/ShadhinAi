@@ -4,6 +4,33 @@ from user_profile.models import User
 from django.urls import reverse
 
 
+class HomePageSitemap(Sitemap):
+    changefreq = "daily"
+    priority = 1
+
+    def items(self):
+        return ['home',]
+    
+
+    def location(self, item):
+        return reverse(item)
+
+
+
+
+class StaticSitemap(Sitemap):
+    changefreq = "monthly"
+    priority = 0.5
+    
+
+    def items(self):
+        return ['login', 'signup', 'blogs']
+
+    def location(self, item):
+        return reverse(item)
+
+
+
 
 class BlogSitemap(Sitemap):
     changefreq = "weekly"
