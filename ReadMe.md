@@ -4,21 +4,11 @@ http://127.0.0.1:8000/static/1.webp
 {% for blog in blogs|slice:"6" %}
 10.0.0.174:5500
 
-slider - 6
-home page - 12
-bloge page - 18
-
-have to add pagenation page on sitemap.xml
 
 
-video - 25done
-
-
-
-<small>{{blog.user.username}}</small> <br>
-<small>{{blog.blog_comments.all.count}} Comments</small> <br>
-<small>{{blog.category.title}}</small>
-pip freeze > requirements.txt
+# Alrady done
+- sitemap.xml file
+- canonical tag
 
 
 
@@ -37,8 +27,6 @@ pip freeze > requirements.txt
 - tag is not editable problem solve
 - forgot password
 - title on img tag
-
-
 
 
 
