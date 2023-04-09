@@ -8,7 +8,7 @@ http://127.0.0.1:8000/static/1.webp
 
 # Alrady done
 - sitemap.xml file
-- canonical tag
+- canonical tag (https://{yourdomain})
 
 
 
