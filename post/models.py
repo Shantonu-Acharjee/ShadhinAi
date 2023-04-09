@@ -52,6 +52,7 @@ class Blog(models.Model):
     banner = models.ImageField(upload_to= 'blog_banners', blank= True, null= True)
     low_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
     high_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
+    meta_description = models.CharField(max_length= 300, null= True, blank= True)
     description = RichTextField()
     created_date = models.DateField(auto_now_add= True)
     updated = models.DateTimeField(auto_now= True)
