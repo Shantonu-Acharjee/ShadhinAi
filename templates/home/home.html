@@ -178,9 +178,6 @@ scrolling-text end
 
 
 
-
-
-
 {% endblock main_content %}<!--main_content end-->
 
 
@@ -220,3 +217,22 @@ scrolling-text end
 
 </script>
 {% endblock custom_script %}
+
+
+
+
+<!--Schema Start -->
+{% block schema %}
+{
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "{{logo.brand_name}}",
+    "url": "https://{{site_domain}}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://{{site_domain}}/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+{% endblock schema %}
+<!--Schema End -->

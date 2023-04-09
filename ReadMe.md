@@ -55,4 +55,5 @@ http://127.0.0.1:8000/static/1.webp
 - (shantonuacharjee.pythonanywhere.com) 09:04 ~/shantonuacharjee.pythonanywhere.com (main)$ 
 - <link rel="stylesheet" href="{% static 'static/css/style.css' %}">   
 - {% block meta_description %}{% endblock meta_description %}
+- {% block schema %}{% endblock schema %}
 

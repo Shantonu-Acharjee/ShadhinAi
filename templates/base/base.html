@@ -7,43 +7,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/favicon/favicon.svg">
+    <link rel="icon" type="image/x-icon"
+        href="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/favicon/favicon.svg">
     <title>{% block title %}{% endblock title %}{% if request.path != '/' %} | ShadhinAi{% endif %}</title><!--title-->
-    <link rel="canonical" href="https://{{site_domain}}{{request.path}}"/><!--canonical start-->
+    <link rel="canonical" href="https://{{site_domain}}{{request.path}}" /><!--canonical start-->
 
 
     <!-- Meta Contant Start -->
     <meta name="description" content="{% block meta_description %}{% endblock meta_description %}">
-    
-    
+
+
     <!-- Facebook Meta Tags -->
-    <meta property="og:type" content= "website">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://{{site_domain}}">
     <meta property="og:site_name" content="{{logo.brand_name}}">
     <meta property="og:title" content="ShadhinAi | Bangladeshi AI service provider">
-    <meta property="og:description" content="Shadhin Ai is Bangladeshi AI and ML service provider. ShadhinAi ensures freedom of technology.">
-    <meta property="og:image" content= "https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/logo/ShadhinAi-Square.svg">
-    
-    
+    <meta property="og:description"
+        content="Shadhin Ai is Bangladeshi AI and ML service provider. ShadhinAi ensures freedom of technology.">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/logo/ShadhinAi-Square.svg">
+
+
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://{{site_domain}}">
     <meta name="twitter:title" content="ShadhinAi | Bangladeshi AI service provider">
-    <meta name="twitter:description" content="Shadhin Ai is Bangladeshi AI and ML service provider. ShadhinAi ensures freedom of technology.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/logo/ShadhinAi-Square.svg">
+    <meta name="twitter:description"
+        content="Shadhin Ai is Bangladeshi AI and ML service provider. ShadhinAi ensures freedom of technology.">
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/logo/ShadhinAi-Square.svg">
     <meta name="twitter:image:alt" content="ShadhinAi Bangladeshi AI service provider">
 
     <!-- Meta Contant End -->
 
 
-
-    
     <script src="https://kit.fontawesome.com/57947015ac.js" crossorigin="anonymous"></script><!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/css/style.css">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/css/style.css">
     {% block custom_css %}{% endblock custom_css %}<!--custom_css-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/css/media.css">
-  
+
 </head>
 
 
@@ -52,11 +55,11 @@
 
 <body>
 
-    
+
     {% block scrolling_text %}{% endblock scrolling_text %}<!--scrolling_text-->
     {% include '../base/header.html' %}
 
-    
+
 
 
 
@@ -64,15 +67,15 @@
 
         <main>
 
-            
+
 
 
             <div class="main-content"><!--main-content start-->
 
                 {% include "../base/alert.html" %}
                 {% block main_content %}{% endblock main_content %}
-                
-            </div><!--main-content end-->    
+
+            </div><!--main-content end-->
 
 
 
@@ -89,18 +92,18 @@
 
                 <div class="popular-post"><!--popular-post start-->
 
-                    
 
-                       
+
+
                     {% include '../base/sideContent.html' %}
-                       
-                    
-                    
+
+
+
                 </div><!--popular-post end-->
-                
-                
-                
-                
+
+
+
+
 
             </div><!--side-content end-->
 
@@ -113,14 +116,6 @@
 
 
 
-    
-
-
-
-
-
-
-    
 
 
 
@@ -131,18 +126,30 @@
 
 
 
-    
+
+
+
+
+
+
+
+
+
 
 
     {% include '../base/footer.html' %}
+    
+    <!--Schema Start -->
+    <script type="application/ld+json">
+    {% block schema %}
+        
+    {% endblock schema %}
+    </script>
+    <!--Schema End -->
+
 </body>
 
-    
-
-
-    {% block custom_script %}{% endblock custom_script %}
-        
-
-    <script src="https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/js/main.js"></script>
+{% block custom_script %}{% endblock custom_script %}
+<script src="https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/js/main.js"></script>
 
 </html>
