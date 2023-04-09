@@ -113,28 +113,49 @@
     /*-------------------------------------------
     page-number end
     --------------------------------------------*/
+
+    /*-------------------------------------------
+scrolling-text start
+--------------------------------------------*/
+
+.scrolling-text p marquee {
+    background: var(--header-color);
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    padding: 5px 0;
+}
+
+/*-------------------------------------------
+scrolling-text end
+--------------------------------------------*/
+
 </style>
 {% endblock custom_css %}<!--custom_css end-->
 
 
 
 
+    
 <!--scrolling_text Start-->
 {% block scrolling_text %}
 <div class="header-padding scrolling-text">
 
-    <p>
-        <marquee>Hand Over Your Problem To ShadhinAi And Make True Your Imagination.</marquee>
-    </p>
+    {% if scrolling_text.text %}
+    <p><marquee>{{scrolling_text.text}}</marquee></p>
+    {% endif %}
 
 </div>
 
-<h1 style="display: none;">ShadhinAi | Bangladeshi AI service provider</h1>
+
 {% endblock scrolling_text %}
 <!--scrolling_text end-->
 
 
 
+
+
+<h1 style="display: none;">ShadhinAi | Bangladeshi AI service provider</h1>
 
 
 
@@ -147,6 +168,7 @@
 
 
 <div class="main-post"> <!--main-post start-->
+
     <h2>Latest Post</h2>
     {% include '../blogs/blogPosts.html' %}
     {% include '../base/pagination.html' %}

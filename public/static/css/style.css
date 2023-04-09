@@ -91,6 +91,15 @@ small {
 }
 
 
+
+.header-padding {
+    margin-top: 65px;
+}
+
+
+
+
+
 /*-------------------------------------------
 header
 --------------------------------------------*/
@@ -247,25 +256,6 @@ section header .search-bar input {
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--green);
-}
-
-/*-------------------------------------------
-scrolling-text
---------------------------------------------*/
-
-.header-padding {
-    margin-top: 65px;
-}
-
-
-
-
-.scrolling-text p marquee {
-    background: var(--header-color);
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    color: var(--white);
-    padding: 5px 0;
 }
 
 

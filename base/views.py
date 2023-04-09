@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from post.models import Blog
 from django.core.paginator import PageNotAnInteger, EmptyPage, Paginator
-from . models import Slider
+from . models import Slider, ScrollingText
 from django.db.models import Q
 
 
 def home(request):
+    scrolling_text = ScrollingText.objects.first()
     queryset = Blog.objects.order_by('-created_date')
     sliders = Slider.objects.order_by('-created_date')
     page = request.GET.get('page', 1)
@@ -25,6 +26,7 @@ def home(request):
         'blogs': blogs,
         'paginator': paginator,
         'sliders': sliders,
+        'scrolling_text' : scrolling_text,
     }
 
     return render(request, 'home/home.html', context)

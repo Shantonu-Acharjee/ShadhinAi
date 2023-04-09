@@ -22,3 +22,7 @@ class HeaderLogo(models.Model):
     brand_name = models.CharField(max_length= 50)
     brang_logo = models.ImageField(upload_to= 'logo', null= True, blank= True)
     image_link = models.CharField(max_length= 300, null= True, blank= True)
+
+
+class ScrollingText(models.Model):
+    text = models.TextField(null= True, blank= True)
