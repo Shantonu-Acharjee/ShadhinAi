@@ -50,6 +50,7 @@ class Blog(models.Model):
     high_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
     description = RichTextField()
     created_date = models.DateField(auto_now_add= True)
+    updated = models.DateTimeField(auto_now= True)
 
     def __str__(self):
         return self.title

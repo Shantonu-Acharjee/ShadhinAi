@@ -32,7 +32,11 @@ INSTALLED_APPS = [
     "user_profile",
     "ckeditor",
     "notification",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
 ]
+
+SITE_ID = 1   #define the site id
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
