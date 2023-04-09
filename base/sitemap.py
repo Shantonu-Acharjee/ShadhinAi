@@ -57,7 +57,7 @@ class TagSitemap(Sitemap):
     
 
     def location(self, obj):
-        return '/blog/%s' % (obj.slug)
+        return '/tag/%s' % (obj.slug)
     
 
 
