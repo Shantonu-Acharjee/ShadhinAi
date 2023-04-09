@@ -8,12 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/favicon/favicon.svg">
     <title>{% block title %}{% endblock title %} | ShadhinAi</title><!--title-->
+    <link rel="canonical" href="https://{{site_domain}}{{request.path}}"/><!--canonical start-->
 
     <script src="https://kit.fontawesome.com/57947015ac.js" crossorigin="anonymous"></script><!--Font Awesome-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/css/style.css">    
-    
     {% block custom_css %}{% endblock custom_css %}<!--custom_css-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/css/media.css">
+  
 </head>
 
 
@@ -28,14 +29,13 @@
 
     
 
-    
 
 
     <section class="main header-padding">
 
         <main>
 
-
+            
 
 
             <div class="main-content"><!--main-content start-->
@@ -43,7 +43,6 @@
                 {% include "../base/alert.html" %}
                 {% block main_content %}{% endblock main_content %}
                 
-
             </div><!--main-content end-->    
 
 
@@ -62,25 +61,15 @@
                 <div class="popular-post"><!--popular-post start-->
 
                     
-                        
-                    
-                    
-                
-                   
-
 
                        
-                        {% include '../base/sideContent.html' %}
+                    {% include '../base/sideContent.html' %}
                        
-                        
-                
-                
-                
-                    
-                
                     
                     
                 </div><!--popular-post end-->
+                
+                
                 
                 
 

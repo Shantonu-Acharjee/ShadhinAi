@@ -65,6 +65,8 @@ TEMPLATES = [
                 "post.context_processors.get_all_tags",
                 "user_profile.context_processors.user_notifications",
                 "base.context_processors.get_header_logo",
+                "base.context_processors.get_site_domain",
+                
             ],
         },
     },
