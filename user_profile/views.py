@@ -285,7 +285,6 @@ def update_blog(request, slug):
 def view_user_information(request, username):
     account = get_object_or_404(User, username = username)
 
-
     queryset =  account.user_blogs.all()
     page = request.GET.get('page', 1)
     # enter how many post you want to see on single page

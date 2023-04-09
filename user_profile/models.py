@@ -7,10 +7,10 @@ from .managers import CustomUserManager
 
 # create model for user
 class User(AbstractUser):
+    updated = models.DateTimeField(auto_now= True)
     email = models.EmailField(max_length= 150, unique= True, error_messages= {'unique' : 'Email must be unique'})
     profile_image = models.ImageField(upload_to= 'profile_images', null= True, blank= True)
     followers = models.ManyToManyField('Follow')
-
     REQUIRED_FIELDS = ['email']
     objects = CustomUserManager()
 

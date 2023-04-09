@@ -1,5 +1,6 @@
 from django.contrib.sitemaps import Sitemap
-from .models import Blog, Category, Tag
+from post.models import Blog, Category, Tag
+from user_profile.models import User
 from django.urls import reverse
 
 
@@ -57,3 +58,23 @@ class TagSitemap(Sitemap):
 
     def location(self, obj):
         return '/blog/%s' % (obj.slug)
+    
+
+
+
+
+
+class UserSitemap(Sitemap):
+    changefreq = "weekly"
+    priority = 0.6
+
+    def items(self):
+        return User.objects.all()
+    
+
+    def lastmod(self, obj):
+        return obj.updated
+    
+
+    def location(self, obj):
+        return '/user/%s' % (obj.username)
