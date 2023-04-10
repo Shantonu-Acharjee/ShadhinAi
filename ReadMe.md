@@ -58,4 +58,5 @@ http://127.0.0.1:8000/static/1.webp
 - {% block meta_description %}{% endblock meta_description %}
 - {% block schema %}{% endblock schema %}
 - <p>{{blog.description|safe}}</p>
+- {% block meta_all_details %}{% endblock meta_all_details %}
 

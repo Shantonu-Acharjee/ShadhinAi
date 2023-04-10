@@ -246,7 +246,7 @@ comment end
 .link-btn{
         
     text-align: center;
-    margin: 15px 0;
+    margin: 25px 0;
 }
 
 .link-btn a{
@@ -297,6 +297,21 @@ comment end
 
 <!--schema data-->
 {% block schema %}{{blog.schema_data|safe}}{% endblock schema %}
+
+
+
+
+{% block meta_all_details %}
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{blog.title}}">
+    <meta property="og:description" content="{{blog.meta_description}}">
+    <meta property="og:image" content="{{blog.high_regulation_banner_link}}">
+
+    <meta name="twitter:title" content="{{blog.title}}">
+    <meta name="twitter:description" content="{{blog.meta_description}}">
+    <meta name="twitter:image" content="{{blog.high_regulation_banner_link}}">
+    <meta name="twitter:image:alt" content="{{blog.title}}">
+{% endblock meta_all_details %}
 
 
 
