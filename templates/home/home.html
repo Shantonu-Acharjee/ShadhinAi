@@ -226,17 +226,46 @@ scrolling-text end
 <!--Schema Start -->
 {% block schema %}
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org/",
-    "@type": "WebSite",
-    "name": "{{logo.brand_name}}",
-    "url": "https://{{site_domain}}",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://{{site_domain}}/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-}
-</script>
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "{{logo.brand_name}}",
+        "url": "https://{{site_domain}}",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://{{site_domain}}/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+    },
+    
+    
+    
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "{{logo.brand_name}}",
+        "alternateName": "স্বাধীন Ai",
+        "url": "https://{{site_domain}}",
+        "logo": "https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/logo/ShadhinAi.svg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+8801789333514",
+          "contactType": "customer service",
+          "contactOption": ["TollFree","HearingImpairedSupported"],
+          "areaServed": "BD",
+          "availableLanguage": ["Bengali","en"]
+        },
+        "sameAs": [
+          "https://www.facebook.com/ShadhinAi",
+          "https://instagram.com/shadhin.ai",
+          "https://www.youtube.com/channel/UCoOLAz0OJ4xX-Uu-GbQd8Gg",
+          "https://www.linkedin.com/company/shadhinai",
+          "https://github.com/ShadhinAi",
+          "https://shantonuacharjee.pythonanywhere.com"
+        ]
+      }
+    
+    
+    </script>
 {% endblock schema %}
 <!--Schema End -->

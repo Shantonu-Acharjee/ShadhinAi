@@ -128,7 +128,22 @@
 
     {% include '../base/footer.html' %}
     <!--Schema Start -->
-    {% block schema %}{% endblock schema %}
+    {% block schema %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "WebSite",
+            "name": "ShadhinAi",
+            "url": "https://shantonuacharjee.pythonanywhere.com",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://shantonuacharjee.pythonanywhere.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+    
+    {% endblock schema %}
     <!--Schema End -->
 
 </body>
