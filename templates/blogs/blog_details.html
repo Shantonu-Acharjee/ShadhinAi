@@ -14,7 +14,10 @@
         blog-post start
         --------------------------------------------*/
 
-
+        .blog-post a{
+            color: var(--green);
+            text-decoration: underline;
+        }
         
 
         .blog-post h2 {
@@ -22,6 +25,7 @@
             padding: 10px 5px;
             font-size: 20px;
             background: var(--gray-light);
+            margin: 5px 0;
         }
 
         .blog-post p {
@@ -34,7 +38,9 @@
         .blog-post ul {
 
             list-style: disc;
+            margin: 10px 0;
             margin-left: 30px;
+           
         }
 
         .blog-post ul li {
@@ -190,6 +196,44 @@ comment end
     page-number end
     --------------------------------------------*/
 
+    /*---------------------------------------
+    image grid start
+    --------------------------------------*/
+    .image-grid img{
+        margin: 0 !important;
+    }
+  
+
+    .image-grid{
+        margin-right: 5px;
+        margin-top: 10px;
+        display: grid;
+        grid-gap: 5px;
+    }
+    
+    
+    .grid-2{
+        grid-template-columns: 50% 50%;
+    }
+
+   
+
+    .grid-3{
+        grid-template-columns: 33.33% 33% 33%;
+    }
+
+
+    .grid-4{
+       
+        grid-template-columns: 25% 25% 25% 25%;
+        
+     
+    }
+
+    /*---------------------------------------
+    image grid end
+    --------------------------------------*/
+
     pre code span{
         color: var(--green);
     }
@@ -220,10 +264,12 @@ comment end
         <a href="{% url 'blog_details' blog.slug %}"><div class="photo"><img src="{{blog.banner.url}}" alt="{{blog.title}}" loading="lazy"></div></a>
     {% endif %}
 
-    <p>{{blog.description|safe}}</p>
+
+    <div>{{blog.description|safe}}</div>
+    
 
 
-</div><!--blog-post start-->
+</div><!--blog-post end-->
 
 
 {% include '../blogs/comments.html' %}

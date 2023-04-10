@@ -53,7 +53,9 @@ http://127.0.0.1:8000/static/1.webp
 - https://cdn.jsdelivr.net/gh/Shantonu-Acharjee/ShadhinAi.com@main/style.css
 - https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/css/style.css
 - (shantonuacharjee.pythonanywhere.com) 09:04 ~/shantonuacharjee.pythonanywhere.com (main)$ 
-- <link rel="stylesheet" href="{% static 'static/css/style.css' %}">   
+- <link rel="stylesheet" href="{% static 'static/css/style.css' %}">  
+- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/css/style.css">
 - {% block meta_description %}{% endblock meta_description %}
 - {% block schema %}{% endblock schema %}
+- <p>{{blog.description|safe}}</p>
 
