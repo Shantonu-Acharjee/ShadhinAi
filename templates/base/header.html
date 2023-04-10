@@ -23,10 +23,8 @@
             <nav>
                 <ul>
                     <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="">Projects</a></li>
                     <li><a href="{% url 'blogs' %}">Blogs</a></li>
-                    <li><a href="">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
+                    
                 </ul>
             </nav>
 
@@ -84,21 +82,19 @@
                 <ul>
 
 
-                    <li><a href="#"><span id="dripdown1icon"><i class="fa-solid fa-caret-down"></i></span>
-                            Top Projects</a>
+                    <li><a href="https://shantonuacharjee.pythonanywhere.com/blogs"><span id="dripdown1icon"><i class="fa-solid fa-caret-down"></i></span>
+                            Blogs</a>
 
                         <ul class="dripdown1 display-none">
-                            <li><a href="#">Arduino Projects</a></li>
-                            <li><a href="#">Node MCU Projects</a></li>
-                            <li><a href="#">Python Projects</a></li>
+                            <li><a href="https://shantonuacharjee.pythonanywhere.com/tag/arduino">Arduino Blogs</a></li>
+                            
                         </ul>
 
                     </li>
 
 
                     
-                    <li><a href="">SiteMap</a></li>
-                    <li><a href="">PageNotFound</a></li>
+                
 
                     {% for category in categories %}
                     <li><a href="{% url 'category_blogs' category.slug  %}">{{category.title}}</a></li>
