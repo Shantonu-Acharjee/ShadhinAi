@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "notification",
     "django.contrib.sites",
     "django.contrib.sitemaps",
+    "project",
 ]
 
 SITE_ID = 1   #define the site id

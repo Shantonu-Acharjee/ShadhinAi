@@ -1,0 +1,35 @@
+{% extends '../../base/base.html' %}
+{% load static %}
+{% block title %}Python Link Shortener Online{% endblock title %}<!--title-->
+{% block meta_description %}ShadhinAi | Python-based link shortener is an online project that lets you easily shorten long URLs into concise and manageable links. Try it now and streamline your online communication!{% endblock meta_description %}
+
+
+
+{% block custom_css %}<!--custom_css start-->
+<style>
+</style>
+{% endblock custom_css %}<!--custom_css end-->
+
+
+
+
+{% block main_content %}<!--main_content start-->
+
+<h1>Free Python Link Shortener Online</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input required name="text" type="text" placeholder="Enter Your big link">
+    <button type="submit">Get Short Url</button>
+</form>
+
+<br><br><br>
+
+{% if text %}
+<p>Your big link:- {{text}}</p>
+<br>
+<p>your shont link :- {{short_link}}</p>
+{% endif %}
+
+
+{% endblock main_content %}<!--main_content end-->
