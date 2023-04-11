@@ -45,6 +45,7 @@ http://127.0.0.1:8000/static/1.webp
 - rm -r folder name (to deleate a folder)
 - git pull --no-edit
 - pip install pyshorteners
+- exit [n]
 
 
 # Doc
