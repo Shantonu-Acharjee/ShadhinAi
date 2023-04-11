@@ -49,7 +49,7 @@ class Blog(models.Model):
     tags = models.ManyToManyField(Tag, related_name= 'tag_blogs', blank= True)
     likes = models.ManyToManyField(User, related_name='user_likes', blank= True)
     title = models.CharField(max_length= 250)
-    slug = models.SlugField(null= True, blank= True)
+    slug = models.SlugField(allow_unicode=True, null= True, blank= True)
     banner = models.ImageField(upload_to= 'blog_banners', blank= True, null= True)
     low_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
     high_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
@@ -65,13 +65,18 @@ class Blog(models.Model):
 
     def save(self, *args, **kwargs):
         updating = self.pk is not None
+
+        if not self.slug:
+            self.slug = self.title.replace(" ", "-").replace(",", "")
+        return super(Blog, self).save(*args, **kwargs)
+    
         
-        if updating:
+        """if updating:
             self.slug = generate_unique_slug(self, self.title, update=True)
             super().save(*args, **kwargs)
         else:
             self.slug = generate_unique_slug(self, self.title)
-            super().save(*args, **kwargs)
+            super().save(*args, **kwargs)"""
     
 
 
