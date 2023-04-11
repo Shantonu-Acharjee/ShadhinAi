@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon"
         href="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/favicon/favicon.svg">
     <title>{% block title %}{% endblock title %}{% if request.path != '/' %} | ShadhinAi{% endif %}</title><!--title-->
-    <link rel="canonical" href="https://{{site_domain}}{{request.path}}" /><!--canonical start-->
+    <link rel="canonical" href="https://{{site_domain}}{{request.path|slice:':-1'}}" /><!--canonical start-->
 
 
     <!-- Meta Contant Start -->
@@ -19,13 +19,18 @@
 
     <!-- Facebook Meta Tags -->
     
-    <meta property="og:url" content="https://{{site_domain}}{{request.path}}">
-    <meta property="og:site_name" content="{{logo.brand_name}}">
     
+    {% if request.path|default:""|slice:"-1:" == '/' %}
+    <meta property="og:url" content="https://{{site_domain}}{{request.path}}">
+    <meta property="twitter:url" content="https://{{site_domain}}{{request.path}}">
 
-    <!-- Twitter Meta Tags -->
+    {% else %}
+    <meta property="og:url" content="https://{{site_domain}}{{request.path|slice:':-1'}}">
+    <meta property="twitter:url" content="https://{{site_domain}}{{request.path|slice:':-1'}}">
+    {% endif %}
+    
+    <meta property="og:site_name" content="{{logo.brand_name}}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://{{site_domain}}">
     <meta property="og:type" content="website">
 
     {% block meta_all_details %}
@@ -74,7 +79,7 @@
 
 
             <div class="main-content"><!--main-content start-->
-
+                
                 {% include "../base/alert.html" %}
                 {% block main_content %}{% endblock main_content %}
 
