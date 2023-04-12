@@ -3,23 +3,25 @@
 <html lang="en">
 
 <head>
-
+    <meta name="google-site-verification" content="W-o-P3E4t8ZS8stlZ_vt7lXIKRuXnJA2F9_ARvCJYoc" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon"
-        href="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/favicon/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/favicon/favicon.svg">
     <title>{% block title %}{% endblock title %}{% if request.path != '/' %} | ShadhinAi{% endif %}</title><!--title-->
+
+    {% if request.path|default:""|slice:"-1:" == '/' %}
     <link rel="canonical" href="https://{{site_domain}}{{request.path|slice:':-1'}}" /><!--canonical start-->
 
+    {% else %}
+    <link rel="canonical" href="https://{{site_domain}}{{request.path}}" /><!--canonical start-->
+    {% endif %}
+    
 
     <!-- Meta Contant Start -->
-    <meta name="description" content="{% block meta_description %}{% endblock meta_description %}">
-    <meta name="google-site-verification" content="W-o-P3E4t8ZS8stlZ_vt7lXIKRuXnJA2F9_ARvCJYoc" />
+    <meta name="description" content="{% block meta_description %}Shadhin Ai is Bangladeshi AI and ML service provider. ShadhinAi ensures freedom of technology.{% endblock meta_description %}">
 
     <!-- Facebook Meta Tags -->
-    
-    
     {% if request.path|default:""|slice:"-1:" == '/' %}
     <meta property="og:url" content="https://{{site_domain}}{{request.path}}">
     <meta property="twitter:url" content="https://{{site_domain}}{{request.path}}">
@@ -47,9 +49,6 @@
     {% endblock meta_all_details %}
     <!-- Meta Contant End -->
 
-    
-
-
     <script src="https://kit.fontawesome.com/57947015ac.js" crossorigin="anonymous"></script><!--Font Awesome-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ShadhinAi/ShadhinAi@main/public/static/css/style.css">
     {% block custom_css %}{% endblock custom_css %}<!--custom_css-->
@@ -69,13 +68,9 @@
 
 
 
-
-
     <section class="main header-padding">
 
         <main>
-
-
 
 
             <div class="main-content"><!--main-content start-->
@@ -87,20 +82,10 @@
 
 
 
-
-
-
-
-
-
-
-
             <div class="side-content"><!--side-content start-->
                 {% include '../base/categories.html' %}
 
                 <div class="popular-post"><!--popular-post start-->
-
-
 
 
                     {% include '../base/sideContent.html' %}
@@ -110,16 +95,11 @@
                 </div><!--popular-post end-->
 
 
-
-
-
             </div><!--side-content end-->
 
         </main>
 
     </section>
-
-
 
 
 
