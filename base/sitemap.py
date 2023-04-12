@@ -24,7 +24,7 @@ class StaticSitemap(Sitemap):
     
 
     def items(self):
-        return ['login', 'signup', 'blogs']
+        return ['login', 'signup', 'blogs', 'python_link_shortener_online']
 
     def location(self, item):
         return reverse(item)
