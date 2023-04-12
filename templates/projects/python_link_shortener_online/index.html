@@ -1,12 +1,102 @@
 {% extends '../../base/base.html' %}
 {% load static %}
-{% block title %}Python Link Shortener Online{% endblock title %}<!--title-->
+{% block title %}Python Free Link Shortener Online{% endblock title %}<!--title-->
 {% block meta_description %}ShadhinAi | Python-based link shortener is an online project that lets you easily shorten long URLs into concise and manageable links. Try it now and streamline your online communication!{% endblock meta_description %}
 
 
 
 {% block custom_css %}<!--custom_css start-->
 <style>
+    .shortener_form{
+        margin: 20px 0;
+        width: 100%;
+        padding: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .shortener_form input{
+        height: 45px;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 100px;
+    }
+
+    .shortener_form button{
+        margin: 0 10px;
+        padding: 0 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 0 5px 5px 0;
+        background: var(--green);
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 16px;
+        color: var(--white);
+    }
+
+
+
+    h2{
+        color: var(--white);
+        padding: 10px 5px;
+        font-size: 20px;
+        background: var(--gray-light);
+        margin: 10px 0;
+        
+    }
+
+
+    .data{
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-gap: 5px;
+        margin: 5px 0;
+    }
+
+    .data p{
+        padding: 5px;
+        background-color: var(--gray-light);
+    }
+
+    .data p:first-child{
+        background: var(--green);
+        display: flex;
+        align-items: center;
+    }
+
+    p{
+        
+        font-size: 16px;
+        text-align: justify;
+        padding: 10px 5px;
+    }
+
+
+    .link-btn{
+        
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 35px;
+    }
+    
+    .link-btn a{
+        background-color: var(--green);
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: var(--white);
+    }
+    
+    
+
 </style>
 {% endblock custom_css %}<!--custom_css end-->
 
@@ -15,21 +105,103 @@
 
 {% block main_content %}<!--main_content start-->
 
-<h1>Free Python Link Shortener Online</h1>
+<h1 class="page-header">Free Python Link Shortener Online</h1>
 
-<form action="" method="POST">
+<form method="POST" class="shortener_form">
     {% csrf_token %}
-    <input required name="text" type="text" placeholder="Enter Your big link">
-    <button type="submit">Get Short Url</button>
+    <input required name="text" type="text" placeholder="Enter Your long link">
+    <button type="submit">Get Url</button>
 </form>
 
-<br><br><br>
 
-{% if text %}
-<p>Your big link:- {{text}}</p>
-<br>
-<p>your shont link :- {{short_link}}</p>
-{% endif %}
+
+
+
+
+<div>
+
+    <h2 style="text-align:center;">Get your short url free</h2>
+
+    <div class="data">
+        <p>Your long link</p>
+        <p>{{text}}</p>
+    </div>
+
+
+    <div class="data">
+        <p>Your Short Url</p>
+        <p>{{short_link}}</p>
+    </div>
+
+</div>
+
+
+<div class="link-btn">
+    <a class="link-btn" href="https://github.com/Shantonu-Acharjee/Affiliate-With-LinkShortener">
+        Link Shortener GitHub Repositories
+    </a>
+</div>
+
+<img src="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/projects/Free-Python-Link-Shortener-Online/Free-Python-Link-Shortener-Online.webp" alt="Free Python Link Shortener Online Shadhin Ai" title="Free Python Link Shortener Online ShadhinAi">
+
+
+
+
+
+<h2>About Link shortener</h2>
+<p>In today's world of social media and online marketing, URL shortening has become a necessary tool for businesses and individuals to share links and track clicks. There are several URL shorteners available on the internet, but not all of them offer the same level of features or security. However, one URL shortener that stands out is the one provided by the ShadhinAi website, which is not only free but also comes with a host of useful features.</p>
+<p>ShadhinAi's URL shortener is a web-based tool that allows you to shorten any long URL into a much shorter one. The website is user-friendly and easy to navigate, making it a great option for anyone looking to shorten links. Simply enter the URL you want to shorten into the box provided, and click the "Shorten" button. The site will then generate a shortened link for you, which you can copy and share as needed.</p>
+<p>One of the main advantages of using ShadhinAi's URL shortener is that it is completely free. Unlike other services that charge for advanced features, ShadhinAi's shortener is free to use for anyone. This makes it an excellent choice for businesses or individuals who need to shorten links frequently but don't want to spend money on a paid service.</p>
+<p>Another advantage of using ShadhinAi's URL shortener is the level of security it offers. The site uses HTTPS encryption to ensure that all links are secure and protected from prying eyes. This means that any link you shorten with ShadhinAi's tool will be protected from hackers and other online threats, giving you peace of mind when sharing links online.</p>
+<p>In addition to its security features, ShadhinAi's URL shortener also offers several other useful features. For example, you can track the number of clicks your links receive, which can help you gauge the effectiveness of your marketing campaigns. You can also customize your links with your own branding, giving them a more professional and polished look.</p>
+<p>Overall, ShadhinAi's URL shortener is a great tool for anyone looking to shorten links quickly and easily. With its user-friendly interface, security features, and additional customization options, it is an excellent choice for businesses and individuals alike. And best of all, it's completely free to use, making it a no-brainer for anyone looking for a reliable URL-shortening service.</p>
 
 
 {% endblock main_content %}<!--main_content end-->
+
+
+
+<!--schema data-->
+{% block schema %}
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://shantonuacharjee.pythonanywhere.com/blog/python-link-shortener-online"
+      },
+      "headline": "Free Python Link Shortener Online",
+      "description": "Python-based link shortener is an online project that lets you easily shorten long URLs into concise and manageable links. Try it now and streamline your online communication!",
+      "image": "https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/projects/Free-Python-Link-Shortener-Online/Free-Python-Link-Shortener-Online.webp",  
+      "author": {
+        "@type": "Person",
+        "name": "Shantonu Acharjee",
+        "url": "https://shantonuacharjee.pythonanywhere.com/user/Shantonu"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "ShadhinAi",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/logo/ShadhinAi.png"
+        }
+      },
+      "datePublished": "2023-04-12",
+      "dateModified": "2023-04-12"
+    }
+    </script>
+{% endblock schema %}
+
+
+{% block meta_all_details %}
+
+    <meta property="og:title" content="Free Python Link Shortener Online | ShadhinAi">
+    <meta property="og:description" content="Python-based link shortener is an online project that lets you easily shorten long URLs into concise and manageable links. Try it now and streamline your online communication!">
+    <meta name="twitter:title" content="Free Python Link Shortener Online | ShadhinAi">
+    <meta name="twitter:description" content="Python-based link shortener is an online project that lets you easily shorten long URLs into concise and manageable links. Try it now and streamline your online communication!">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/projects/Free-Python-Link-Shortener-Online/Free-Python-Link-Shortener-Online.webp">
+    <meta name="twitter:image:alt" content="Free Python Link Shortener Online | ShadhinAi">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ShadhinAi/ShadhinAi/main/public/media/projects/Free-Python-Link-Shortener-Online/Free-Python-Link-Shortener-Online.webp">
+
+{% endblock meta_all_details %}
