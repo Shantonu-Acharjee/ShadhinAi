@@ -1,7 +1,8 @@
 {% extends '../base/base.html' %}
 {% load static %}
-{% block title %}{{category_name}}{% endblock title %}
+{% block title %}{{category_name.title_tag}}{% endblock title %}
 {% block meta_description %}{{category_name.meta_description}}{% endblock meta_description %}
+
 
 
 {% block custom_css %}<!--custom_css start-->
@@ -128,3 +129,25 @@
 </div><!--main-post end-->
 
 {% endblock main_content %}
+
+
+
+
+
+
+<!--schema data-->
+{% block schema %}{{category_name.schema_data|safe}}{% endblock schema %}
+
+
+
+{% block meta_all_details %}
+
+    <meta property="og:title" content="{{category_name.title_tag}}">
+    <meta property="og:description" content="{{category_name.meta_description}}">
+    <meta name="twitter:title" content="{{category_name.title_tag}}">
+    <meta name="twitter:description" content="{{category_name.meta_description}}">
+    <meta name="twitter:image" content="{{category_name.high_regulation_banner_link}}">
+    <meta name="twitter:image:alt" content="{{category_name.title_tag}}">
+    <meta property="og:image" content="{{category_name.high_regulation_banner_link}}">
+
+{% endblock meta_all_details %}

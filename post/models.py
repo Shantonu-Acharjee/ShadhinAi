@@ -6,11 +6,15 @@ from ckeditor.fields import RichTextField
 
 
 class Category(models.Model):
-    title = models.CharField(max_length= 150, unique= True)
+    title = models.CharField(max_length= 60, unique= True)
+    title_tag = models.CharField(max_length= 150, null= True, blank= True)
     slug = models.SlugField(null= True, blank= True)
     created_date = models.DateField(auto_now_add= True)
     updated = models.DateTimeField(auto_now= True)
-    meta_description = models.CharField(max_length= 300, null= True, blank= True)
+    meta_description = models.CharField(max_length= 160, null= True, blank= True)
+    banner = models.ImageField(upload_to= 'category_banners', blank= True, null= True)
+    high_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
+    schema_data = models.TextField(null= True, blank= True)
 
     def __str__(self):
         return self.title
@@ -24,12 +28,15 @@ class Category(models.Model):
 
 
 class Tag(models.Model):
-    title = models.CharField(max_length= 150)
+    title = models.CharField(max_length= 60)
+    title_tag = models.CharField(max_length= 150, null= True, blank= True)
     slug = models.SlugField(null= True, blank= True)
     created_date = models.DateField(auto_now_add= True)
     updated = models.DateTimeField(auto_now= True)
-    meta_description = models.CharField(max_length= 300, null= True, blank= True)
-    
+    meta_description = models.CharField(max_length= 160, null= True, blank= True)
+    banner = models.ImageField(upload_to= 'tag_banners', blank= True, null= True)
+    high_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
+    schema_data = models.TextField(null= True, blank= True)
 
     def __str__(self):
         return self.title
