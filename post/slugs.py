@@ -4,7 +4,7 @@ from django.utils.text import slugify
 
 
 def generate_unique_slug(instance, base_title, new_slug=False, update=False):
-    slug = slugify(base_title, allow_unicode=True)
+    slug = slugify(base_title)
     model = instance.__class__
 
     if new_slug:
@@ -22,7 +22,7 @@ def generate_unique_slug(instance, base_title, new_slug=False, update=False):
 
     if slug_exists:
         random_string = "".join(random.choices(string.ascii_lowercase, k=4))
-        new = slugify(base_title + '-' + random_string, allow_unicode=True)
+        new = slugify(base_title + '-' + random_string) # allow_unicode=True
         return generate_unique_slug(
             instance,
             base_title,

@@ -9,6 +9,7 @@ class Category(models.Model):
     title = models.CharField(max_length= 60, unique= True)
     title_tag = models.CharField(max_length= 150, null= True, blank= True)
     slug = models.SlugField(null= True, blank= True)
+    custom_slug = models.CharField(max_length=50, null= True, blank= True)
     created_date = models.DateField(auto_now_add= True)
     updated = models.DateTimeField(auto_now= True)
     meta_description = models.CharField(max_length= 160, null= True, blank= True)
@@ -20,9 +21,13 @@ class Category(models.Model):
         return self.title
     
     def save(self, *args, **kwargs):
-         self.slug = slugify(self.title)
-         super().save(*args, **kwargs)
-
+        if self.custom_slug:
+            self.slug = slugify(self.custom_slug)
+            super().save(*args, **kwargs)
+         
+        else:     
+            self.slug = slugify(self.title)
+            super().save(*args, **kwargs)
 
 
 
@@ -31,6 +36,8 @@ class Tag(models.Model):
     title = models.CharField(max_length= 60)
     title_tag = models.CharField(max_length= 150, null= True, blank= True)
     slug = models.SlugField(null= True, blank= True)
+    custom_slug = models.CharField(max_length=50, null= True, blank= True)
+    custom_slug = models.CharField(max_length=50, null= True, blank= True)
     created_date = models.DateField(auto_now_add= True)
     updated = models.DateTimeField(auto_now= True)
     meta_description = models.CharField(max_length= 160, null= True, blank= True)
@@ -42,11 +49,14 @@ class Tag(models.Model):
         return self.title
     
     def save(self, *args, **kwargs):
-         self.slug = slugify(self.title)
-         super().save(*args, **kwargs)
+        if self.custom_slug:
+            self.slug = slugify(self.custom_slug)
+            super().save(*args, **kwargs)
+         
+        else:     
+            self.slug = slugify(self.title)
+            super().save(*args, **kwargs)
     
-
-
 
 
 
@@ -56,7 +66,8 @@ class Blog(models.Model):
     tags = models.ManyToManyField(Tag, related_name= 'tag_blogs', blank= True)
     likes = models.ManyToManyField(User, related_name='user_likes', blank= True)
     title = models.CharField(max_length= 250)
-    slug = models.SlugField(allow_unicode=True, null= True, blank= True)
+    slug = models.SlugField(null= True, blank= True, unique= True) # allow_unicode=True, 
+    custom_slug = models.CharField(max_length=100, null= True, blank= True)
     banner = models.ImageField(upload_to= 'blog_banners', blank= True, null= True)
     low_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
     high_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
@@ -73,20 +84,36 @@ class Blog(models.Model):
     def save(self, *args, **kwargs):
         updating = self.pk is not None
 
-        if not self.slug:
+        """if not self.slug:
             self.slug = self.title.replace(" ", "-").replace(",", "")
-        return super(Blog, self).save(*args, **kwargs)
+        return super(Blog, self).save(*args, **kwargs)"""
     
         
-        """if updating:
-            self.slug = generate_unique_slug(self, self.title, update=True)
-            super().save(*args, **kwargs)
+        
+        if updating:
+
+            if self.custom_slug:
+                self.slug = generate_unique_slug(self, self.custom_slug, update=True)
+                super().save(*args, **kwargs)
+                
+
+            else:
+                self.slug = generate_unique_slug(self, self.title, update=True)
+                super().save(*args, **kwargs)
+                
+
         else:
-            self.slug = generate_unique_slug(self, self.title)
-            super().save(*args, **kwargs)"""
+        
+            if self.custom_slug:
+                self.slug = generate_unique_slug(self, self.custom_slug)
+                super().save(*args, **kwargs)
+                
+            
+            else:
+                self.slug = generate_unique_slug(self, self.title)
+                super().save(*args, **kwargs)
+                
     
-
-
 
 
 
@@ -101,8 +128,6 @@ class Comment(models.Model):
         def __str__(self):
             return self.text
         
-
-
 
 
 

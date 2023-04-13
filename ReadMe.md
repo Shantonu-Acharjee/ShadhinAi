@@ -46,6 +46,7 @@ http://127.0.0.1:8000/static/1.webp
 - git pull --no-edit
 - pip install pyshorteners
 - exit [n]
+- pip install django-autoslug
 
 
 # Doc
@@ -62,4 +63,5 @@ http://127.0.0.1:8000/static/1.webp
 - {% block schema %}{% endblock schema %}
 - <p>{{blog.description|safe}}</p>
 - {% block meta_all_details %}{% endblock meta_all_details %}
+- https://github.com/MoinulHossainNabil/Blog-Website-Django-Tutorials-Youtube
 
