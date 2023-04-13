@@ -61,7 +61,7 @@ class Blog(models.Model):
     low_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
     high_regulation_banner_link = models.CharField(max_length= 350, null= True, blank= True)
     meta_description = models.CharField(max_length= 300, null= True, blank= True)
-    description = RichTextField()
+    description = models.TextField(null= True, blank= True) # RichTextField()
     created_date = models.DateField(auto_now_add= True)
     updated = models.DateTimeField(auto_now= True)
     schema_data = models.TextField(null= True, blank= True)
