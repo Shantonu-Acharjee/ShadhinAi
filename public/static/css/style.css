@@ -22,104 +22,6 @@
 
 
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    max-width: 1533px;
-    margin: auto;
-    background: var(--body-color);
-    /* var(--body-color) */
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-img {
-    width: 100%;
-}
-
-input {
-    border: none;
-    outline: none;
-}
-
-button {
-    cursor: pointer;
-    border: none;
-
-}
-
-section {
-    padding: 0 7%;
-
-}
-
-main {
-    background: var(--header-color);
-}
-
-
-h1,
-h2,
-h3,
-h4,
-p,
-a,
-label,
-span,
-small {
-    color: white;
-    font-family: 'Poppins', sans-serif;
-}
-
-
-.page-header {
-    font-size: 25px;
-    padding: 10px 5px;
-    text-align: center;
-    background: var(--gray-light);
-}
-
-
-
-.header-padding {
-    margin-top: 75px;
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-
-:root {
-    --green: #00BF63;
-    --greenLight: #9eeebf;
-    --black: #192a56;
-    --light-color: #666;
-    --box-shadow: 0px 1px 13px black;
-    --white: #fff;
-    --gray: #eee;
-
-
-    --body-color: #152121;
-    --header-color: #0F0F0F;
-    --gray-light: #272727;
-    --red: #FF3131;
-    --cart-background-color: #0A0B0B;
-    --footer-color: #212529;
-    --facebook-color: #2374E1;
-}
-
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -225,7 +127,7 @@ section header {
 section header .logo {
     display: flex;
     align-items: center;
-
+    max-width: 240px;
 }
 
 
@@ -622,7 +524,7 @@ section header {
 section header .logo {
     display: flex;
     align-items: center;
-    max-width: 240px;
+
 }
 
 
@@ -800,7 +702,6 @@ side-content start
 
 
 
-
 .post-card .post-title {
     background: var(--cart-background-color);
     margin-right: 10px;
@@ -913,8 +814,6 @@ section.footer footer .social ul li a {
 
 
 
-
-
 .contactus a span {
     margin-right: 10px;
 }
@@ -931,7 +830,6 @@ section.footer footer .social ul li a {
 
 
 }
-
 
 
 
@@ -983,7 +881,7 @@ section.footer footer .social ul li a {
 
 
 /*-------------------------------------------
-        alert end
-    --------------------------------------------*/
+    alert end
+--------------------------------------------*/
 
     
