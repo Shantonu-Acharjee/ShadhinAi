@@ -622,7 +622,7 @@ section header {
 section header .logo {
     display: flex;
     align-items: center;
-
+    max-width: 240px;
 }
 
 
