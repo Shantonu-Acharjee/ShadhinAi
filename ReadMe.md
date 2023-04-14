@@ -47,6 +47,7 @@ http://127.0.0.1:8000/static/1.webp
 - pip install pyshorteners
 - exit [n]
 - pip install django-autoslug
+- pip install -r requirements.txt
 
 
 # Doc
@@ -64,4 +65,30 @@ http://127.0.0.1:8000/static/1.webp
 - <p>{{blog.description|safe}}</p>
 - {% block meta_all_details %}{% endblock meta_all_details %}
 - https://github.com/MoinulHossainNabil/Blog-Website-Django-Tutorials-Youtube
+
+
+
+
+
+
+
+
+
+
+
+
+import os
+import sys
+
+
+sys.path.insert(0, os.path.dirname(__file__))
+
+
+def application(environ, start_response):
+    start_response('200 OK', [('Content-Type', 'text/plain')])
+    message = 'It works!\n'
+    version = 'Python %s\n' % sys.version.split()[0]
+    response = '\n'.join([message, version])
+    return [response.encode()]
+
 
