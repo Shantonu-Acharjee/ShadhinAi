@@ -1,9 +1,20 @@
 @media (max-width:1180px) {
+    .scrolling-text{
+        padding: 0 1%;
+    }
 
     section{
         padding: 0 1%;
     }
 
+    footer{
+        margin: 0 1%;
+    }
+
+    footer > div{
+        margin-bottom: 20px;
+    }
+    
 
     .header-padding{
         margin-top:115px;
@@ -38,7 +49,6 @@
         grid-template-columns: 100%;
         
     }
-
 
 }
 
@@ -80,10 +90,9 @@
     }
 
 
-    .footer footer {
-        margin: 0 10px;
+    section.footer footer h5{
+        font-size: 20px;
     }
-
 
     section header .menu {
         margin-right: 0;
