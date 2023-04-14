@@ -334,7 +334,7 @@ youtube iframe end
         <div class="publisher_profile">
 
             <div class="publisher_profile_user">
-                <a href="{% url 'view_user_information' blog.user.username %}"></a>
+                <a href="{% url 'view_user_information' blog.user.username %}">
                     <img src="{{blog.user.get_profile_picture}}" alt="{{blog.user.username}}">
                 </a>
             </div>
