@@ -107,6 +107,11 @@
     }
 
 
+    .publisher_profile .publisher_profile_user{
+        width: 25px;
+        height: 25px;
+    }
+    
     
     
 }
@@ -127,7 +132,13 @@
         margin: 0 1%;
     }
 
+    .publisher a{
+        font-size: 12px;
+    }
     
+    .publisher p{
+        font-size: 12px;
+    }
     
 }
 
