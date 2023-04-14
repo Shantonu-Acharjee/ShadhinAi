@@ -6,13 +6,13 @@
         <div class="logo">
             
             {% if logo.image_link %}
-            <a href="{% url 'home' %}"><img src="{{logo.image_link}}" alt="{{logo.brand_name}} | logo"></a>
+            <a href="https://shadhinai.com/"><img src="{{logo.image_link}}" alt="{{logo.brand_name}} | logo"></a>
 
             {% elif logo.brang_logo %}
-            <a href="{% url 'home' %}"><img src="{{logo.brang_logo}}" alt="{{logo.brand_name}} | logo"></a>
+            <a href="https://shadhinai.com/"><img src="{{logo.brang_logo}}" alt="{{logo.brand_name}} | logo"></a>
 
             {% else %}
-            <a href="{% url 'home' %}"><h1>{{logo.brand_name}}</h1></a>
+            <a href="https://shadhinai.com/"><h1>{{logo.brand_name}}</h1></a>
             {% endif %}
             
             
