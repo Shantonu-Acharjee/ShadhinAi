@@ -344,19 +344,21 @@ youtube iframe end
         
 
 
-            
-
-
-
-            
-        
-
-
         {% else %}
-        <a href="{% url 'view_user_information' blog.user.username %}">{{blog.user.username}}</a>
+        <div class="publisher_profile">
+
+            <div class="publisher_profile_user">
+                <a href="{% url 'view_user_information' blog.user.username %}">
+                    <img src="{{blog.user.get_profile_picture}}" alt="{{blog.user.username}}">
+                </a>
+            </div>
+
+            <a href="{% url 'view_user_information' blog.user.username %}">{{blog.user.username}}</a>
+        </div>
+       
         {% endif %}
 
-        <p>{{blog.created_date|timesince}}</p>
+        <p>{{blog.created_date|timesince}} ago.</p>
     </div>
         
     {% if blog.high_regulation_banner_link %}
