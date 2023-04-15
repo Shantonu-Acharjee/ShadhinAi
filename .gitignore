@@ -7,6 +7,9 @@ db.sqlite3
 media
 public
 test.html
+commands.txt
+ReadMe.md
+test.html
 
 # Backup files # 
 *.bak 
